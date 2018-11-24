@@ -1,0 +1,26 @@
+version: '2.2'
+
+services:
+  wildfly:
+    build: Wildfly
+    ports:
+      - 8080:8080
+      - 9990:9990
+    depends_on:
+      - mysql
+  nginx:
+    build: Nginx
+    ports:
+      - 80:80
+    depends_on:
+      - wildfly
+  phpmyadmin:
+    build: PHPMyAdmin
+    ports:
+      - 5050:5050
+    depends_on:
+      - mysql
+  mysql:
+    build: MySQL
+    ports:
+      - 3306:3306

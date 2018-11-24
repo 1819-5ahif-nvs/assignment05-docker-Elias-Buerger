@@ -1,0 +1,8 @@
+swarm:
+  datasources:
+    data-sources:
+      surveyDS:
+        driver-name: mysql
+        connection-url: jdbc:mysql://mysql/surveyDB
+        user-name: root
+        password: root
